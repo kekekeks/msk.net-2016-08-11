@@ -10,7 +10,7 @@ namespace ClusterNode.Actors
 {
     class ClusterListenerActor : ReceiveActor
     {
-        private readonly HashSet<string> _members = new HashSet<string>();
+        private readonly Dictionary<string, string> _members = new Dictionary<string, string>();
 
         public class GetActiveMembersMessage
         {
@@ -30,11 +30,15 @@ namespace ClusterNode.Actors
             Receive<ClusterEvent.IMemberEvent>(status =>
             {
                 if (status.Member.Status == MemberStatus.Up)
-                    _members.Add(status.Member.Address.ToString());
+                    _members.Add(status.Member.Address.ToString(), string.Join(",", status.Member.Roles));
                 else
                     _members.Remove(status.Member.Address.ToString());
             });
-            Receive<GetActiveMembersMessage>(_ => Sender.Tell(new GetActiveMembersResponseMessage {Members = _members.ToList()}));
+            Receive<GetActiveMembersMessage>(_ =>
+                Sender.Tell(new GetActiveMembersResponseMessage
+                {
+                    Members = _members.Select(x => $"{x.Key} - [{x.Value}]").ToList()
+                }));
 
         }
 

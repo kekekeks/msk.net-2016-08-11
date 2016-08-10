@@ -36,7 +36,7 @@ namespace ClusterClient
             var routees = new[] {"/user/hello"};
             SystemActors.HelloActor =
                 ActorSystem.ActorOf(Props.Create<ClusterHelloActor>().WithRouter(
-                    new ClusterRouterGroup(new RandomGroup(routees),
+                    new ClusterRouterGroup(new RoundRobinGroup(routees), 
                         new ClusterRouterGroupSettings(int.MaxValue, routees, false, "server"))
                     ), "hello");
 
