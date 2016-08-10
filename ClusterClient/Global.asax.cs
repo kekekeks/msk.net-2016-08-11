@@ -13,6 +13,7 @@ using Akka.Routing;
 using Akka.Util.Internal;
 using ClusterClient.Actors;
 using ClusterNode.Actors;
+using ClusterNode.Sharding;
 
 namespace ClusterClient
 {
@@ -44,6 +45,9 @@ namespace ClusterClient
 
 
             //x => ((ClusterHelloActor.HelloMessage) x).Hello.GetHashCode()
+
+
+            SystemActors.Sharded = ShardingSystem.Initialize(ActorSystem, true);
         }
 
         public static ActorSystem ActorSystem { get; set; }

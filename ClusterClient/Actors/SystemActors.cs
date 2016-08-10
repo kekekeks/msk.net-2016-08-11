@@ -9,5 +9,6 @@ namespace ClusterClient.Actors
     public class SystemActors
     {
         public static ICanTell HelloActor;
+        public static ICanTell Sharded;
     }
 }

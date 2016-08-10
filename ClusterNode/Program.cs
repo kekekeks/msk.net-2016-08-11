@@ -9,6 +9,7 @@ using Akka.Actor;
 using Akka.Configuration;
 using Akka.Configuration.Hocon;
 using ClusterNode.Actors;
+using ClusterNode.Sharding;
 
 namespace ClusterNode
 {
@@ -25,6 +26,10 @@ namespace ClusterNode
 
             var clusterStatus = system.ActorOf<ClusterListenerActor>();
             system.ActorOf<ClusterHelloActor>("hello");
+
+
+            ShardingSystem.Initialize(system, false);
+
             while (true)
             {
                 var line = Console.ReadLine();
