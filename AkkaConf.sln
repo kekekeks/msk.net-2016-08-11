@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClusterNode", "ClusterNode\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClusterClient", "ClusterClient\ClusterClient.csproj", "{954CA3E5-F506-48E2-A59B-DF56C9FD5A7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDemo", "TestDemo\TestDemo.csproj", "{4EE0D634-BC8E-40D3-80EC-6678235447CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{954CA3E5-F506-48E2-A59B-DF56C9FD5A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954CA3E5-F506-48E2-A59B-DF56C9FD5A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954CA3E5-F506-48E2-A59B-DF56C9FD5A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE0D634-BC8E-40D3-80EC-6678235447CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE0D634-BC8E-40D3-80EC-6678235447CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE0D634-BC8E-40D3-80EC-6678235447CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE0D634-BC8E-40D3-80EC-6678235447CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
