@@ -67,7 +67,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SnapshotAwareAccountActor.cs" />
     <Compile Include="AccountActor.cs" />
+    <Compile Include="AccountState.cs" />
+    <Compile Include="GetBalanceCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
