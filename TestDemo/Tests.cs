@@ -55,5 +55,19 @@ namespace TestDemo
         }
 
 
+
+        [Fact]
+        public void Actor_Should_Add_One_To_Response()
+        {
+            var target = CreateTestActor("target");
+            target.Tell(new TestActor.SetAutoPilot(new DelegateAutoPilot((sender, msg) =>
+            {
+                sender.Tell(5);
+                return AutoPilot.KeepRunning;
+            })));
+
+            var actor = Sys.ActorOf(Props.Create<AddOneToResultActor2>(target));
+            Assert.Equal(6, actor.Ask<int>("123").Result);
+        }
     }
 }
